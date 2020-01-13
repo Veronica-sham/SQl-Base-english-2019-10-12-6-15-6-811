@@ -1,0 +1,27 @@
+CREATE TABLE `student_examination_sys`.`subject` (
+  `id` INT NOT NULL,
+  `subject` VARCHAR(45) NOT NULL,
+  `teacher` VARCHAR(45) NOT NULL,
+  `description` VARCHAR(45) NOT NULL,
+  PRIMARY KEY (`id`));
+
+CREATE TABLE `student_examination_sys`.`score` (
+  `id` INT NOT NULL,
+  `student_id` VARCHAR(45) NULL,
+  `subject_id` VARCHAR(45) NULL,
+  PRIMARY KEY (`id`));
+  
+CREATE TABLE `student_examination_sys`.`student` (
+  `id` INT NOT NULL,
+  `name` VARCHAR(45) NULL,
+  `age` INT NULL,
+  PRIMARY KEY (`id`));
+  
+INSERT INTO score(id,student_id,subject_id,score)
+VALUES (1,"001","1001","80"),(2,"002","1002","60"),(3,"001","1001","70"),(4,"002","1002","60.5");
+
+INSERT INTO subject(id,student_id,subject_id,score)
+VALUES (1001,"Chinese","Mr. Wang","the exam is easy"),(1002,"math","Miss Liu","the exam is difficult");
+
+INSERT INTO student(id,name,age,sex)
+VALUES (001,"shangsan","18","male"),(002,"lisi","20","female");
